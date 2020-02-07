@@ -10,7 +10,7 @@ class Number {
 
       fs.writeFile(dataPath, data, encoding, (err) => {
         if (err) {
-          return reject(err);
+          return reject({ message: err.message });
         }
         resolve({ message: 'Saved in memory!' });
       });

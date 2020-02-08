@@ -1,0 +1,6 @@
+.Display {
+  font-size: calc(10px + 1vmin);
+  grid-column: 1 / -1;
+  text-align: right;
+  margin: 5px 10px;
+}

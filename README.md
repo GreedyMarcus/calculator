@@ -27,7 +27,8 @@ After that specify the **proxy** in the **package.json** file in the **client** 
 npm install
 
 # Install dependencies for client
-npm run client-install
+cd client
+npm install
 ```
 
 ### Usage

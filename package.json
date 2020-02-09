@@ -7,8 +7,7 @@
     "start": "node server/app.js",
     "server": "nodemon server/app.js",
     "client": "npm run start --prefix client",
-    "client-install": "npm install --prefix client",
-    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Mark Domahidi",
   "license": "ISC",

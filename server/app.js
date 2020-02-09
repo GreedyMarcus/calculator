@@ -15,7 +15,7 @@ const port = process.env.PORT || 8080;
 app.use(cors());
 
 // Init body parser
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Handle requests
 app.use('/api/number', numberRouter);

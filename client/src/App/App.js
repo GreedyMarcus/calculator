@@ -167,6 +167,36 @@ class App extends Component {
         return 0;
     }
   }
+
+  readMemory = () => {
+    fetch('/api/number')
+      .then(response => response.json())
+      .then(data => this.setState({
+        firstOperand: data.number,
+        secondOperand: null,
+        operator: null,
+        isComputed: true
+      }))
+      .catch(error => alert(error.message));
+  }
+
+  saveMemory = () => {
+    const { firstOperand, secondOperand } = this.state;
+    const number = !secondOperand ? firstOperand : secondOperand;
+
+    if (number !== 'Error') {
+      fetch('/api/number', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ number: number })
+      })
+        .then(response => response.json())
+        .then(result => alert(result.message))
+        .catch(error => alert(error.message));
+    }
+  }
   
   render() {
     const { firstOperand, secondOperand, operator } = this.state;
@@ -180,7 +210,9 @@ class App extends Component {
           <Keypad handleNumberClick={this.selectNumber}
                   handleOperationClick={this.selectOperation}
                   handleDotClick={this.selectDot}
-                  handleClearClick={this.clear} />
+                  handleClearClick={this.clear}
+                  handleMemoryReadClick={this.readMemory}
+                  handleMemorySaveClick={this.saveMemory} />
         </div>
       </div>
     );

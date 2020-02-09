@@ -1,12 +1,19 @@
 import React from 'react';
 import Key from './key/Key';
 
-function Keypad({ handleNumberClick, handleOperationClick, handleDotClick, handleClearClick }) {
+function Keypad({
+  handleNumberClick,
+  handleOperationClick,
+  handleDotClick,
+  handleClearClick,
+  handleMemoryReadClick,
+  handleMemorySaveClick
+}) {
   return (
     <React.Fragment>
       <Key sign={'C'} keyStyle={'Key Key-secondary'} handleClick={handleClearClick} />
-      <Key sign={'MR'} keyStyle={'Key Key-secondary'} />
-      <Key sign={'MS'} keyStyle={'Key Key-secondary'} />
+      <Key sign={'MR'} keyStyle={'Key Key-secondary'} handleClick={handleMemoryReadClick} />
+      <Key sign={'MS'} keyStyle={'Key Key-secondary'} handleClick={handleMemorySaveClick} />
       <Key sign={'÷'} keyStyle={'Key Key-secondary'} handleClick={handleOperationClick} />
 
       <Key sign={'7'} keyStyle={'Key Key-primary'} handleClick={handleNumberClick} />

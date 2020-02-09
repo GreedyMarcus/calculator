@@ -1,9 +1,10 @@
 import React from 'react';
 import './Key.css';
 
-function Key({ sign, keyStyle }) { 
+function Key({ sign, keyStyle, handleClick }) {
   return (
-    <button className={keyStyle}>
+    <button className={keyStyle}
+            onClick={() => handleClick && handleClick(sign)}>
       {sign}
     </button>
   );

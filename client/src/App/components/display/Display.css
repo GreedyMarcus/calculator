@@ -2,5 +2,17 @@
   font-size: calc(10px + 1vmin);
   grid-column: 1 / -1;
   text-align: right;
-  margin: 5px 10px;
+}
+
+.Display-primary {
+  font-size: 1.67em;
+  margin-inline-start: 0.3em;
+  margin-inline-end: 0.3em;
+}
+
+.Display-secondary {
+  margin-block-start: 1em;
+  margin-block-end: 0px;
+  margin-inline-start: 0.3em;
+  margin-inline-end: 0.3em;
 }

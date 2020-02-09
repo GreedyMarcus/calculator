@@ -11,7 +11,7 @@ exports.saveNumber = async (req, res) => {
   try {
     const resultMessage = await numberService.saveNumber(parseFloat(number));
 
-    return res.status(200).json(resultMessage);
+    return res.status(201).json(resultMessage);
   } catch (err) {
     return res.status(400).json(err);
   }
